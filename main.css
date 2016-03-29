@@ -1,0 +1,31 @@
+body {
+  background: url(alex-trebek-220x300.jpg);
+  background-repeat: no-repeat;
+  background-size:100%auto;
+  background-origin: content-box;
+}
+
+h5 {
+  color: blue;
+  font-size: 15px;
+  display: inline-block;
+  padding-bottom: 10px;
+  :hover
+}
+ h1 {
+   text-align: -webkit-center;
+    color: limegreen;
+    font-size: 145px;
+    padding-bottom: 50px;
+    padding-top: 15px;
+ }
+
+button.btn.btn-lg {
+  color: blue;
+  background: yellow;
+  font-size: 15px;
+  text-align: center;
+}
+div.modal {
+  background-image: url(alex-trebek-220x300.jpg);
+}

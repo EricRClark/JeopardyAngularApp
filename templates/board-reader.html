@@ -1,0 +1,52 @@
+
+<!-- with guidance from bootstrap modal tutorial and Frank:  -->
+<div class="question-container col-sm-2">
+  <h5>{{question.title}}</h5>
+
+  <div class="" ng-repeat="clue in question.clues">
+
+  <div class="">
+    <a href="" data-toggle="modal" data-target="#{{clue.id}}"<p><button type="button" class="btn btn-primary btn-lg {{clue.id}}">${{clue.value}}</p></button></a>
+  </div>
+
+<div class="" ng-repeat="clue in question.clues">
+
+  <div class="modal fade" tabindex="-1" id="{{clue.id}}" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">{{question.title}}</h4>
+        </div>
+
+        <div class="modal-body {{clue.id}}" >
+          <p>{{clue.question}}</p>
+        </div>
+
+        <div class="modal-body {{clue.id}}" style='display:none'>
+          <p>Answer: {{clue.answer}}</p>
+        </div>
+
+        <div class="modal-footer {{clue.id}}">
+           <form role="form-group" ng-submit="addScore(userInput,clue.answer,clue.value)">
+             <input type="text" name="" ng-model="userInput" class="form-control" placeholder="Enter Answer"/>
+
+          <button ng-click="ques(clue.id)" type="submit" class="btn btn-primary btn-lg" btn-toggle="modal-body">Submit</button>
+
+
+          </div>
+
+          <div class="modal-footer {{clue.id}}" style="display:none">
+            <form role="form-group" ng-submit="addScore(userInput,clue.answer,clue.value)">
+              <input type="text" name="" ng-model="userInput" class="form-control" />
+
+           <button ng-click="disableBtn(clue.id)" type="button" class="btn btn-primary btn-lg" btn-toggle="modal-body">Close</button>
+
+           </div>
+           </form>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
+</div>
