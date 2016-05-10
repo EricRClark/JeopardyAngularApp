@@ -18,7 +18,7 @@ angular
                         }
                     };
                     $scope.disableBTN = function(id) {
-                        $('button.' + id).prop('disbled', true),
+                        $('button.' + id).prop('disabled', true),
                             $('button.' + id).toggle(),
                             $('#' + id).modal('hide')
 
