@@ -3,13 +3,13 @@ angular
     .directive('boardReader', function() {
         return {
             templateUrl: '../templates/board-reader.html',
-            restrict: 'EA',
+            restrict: 'E',
             scope: {
                 question: '=',
-                 addScore: '&'
+
             },
 
-            controller: function($scope, $rootScope, $element) {
+            controller: function($scope, $rootScope) {
                 $scope.addScore = function(input, answer, value) {
                     if (input === answer) {
                         $rootScope.score += value
@@ -18,13 +18,13 @@ angular
                         }
                     };
                     $scope.disableBTN = function(id) {
-                        $('button.' + id).prop('disabled', true),
-                            $('button.' + id).toggle(),
+                        $('button.' + id).prop('disabled', true);
+                            $('button.' + id).toggle();
                             $('#' + id).modal('hide')
 
                     }
                 $scope.ques = function(id){
-                    $("div."+id).toggle();
+                    $("div." + id).toggle();
                 }
             }
         }

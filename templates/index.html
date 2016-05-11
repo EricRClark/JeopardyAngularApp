@@ -4,7 +4,9 @@
 <h5>Score: {{score}}</h5>
 </section>
 
-  <div class="" ng-repeat="category in categories">
+<div class="row">
+  <div class="col-md-2" ng-repeat="category in categories" class="">
     <board-reader question=category.data></board-reader>
-
+  </div>
+</div>
 </div>

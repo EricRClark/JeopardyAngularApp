@@ -22,4 +22,4 @@ angular
 require('./controllers/app.controller');
 require('./services/apiQuests.service');
 require('./directive');
-// require('./services/app.service')
+require('./services/app.module')

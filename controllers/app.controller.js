@@ -24,38 +24,8 @@ angular
                                 el.data.clues[i].value = 200 * (i + 1);
                             }
                         })
-                    // $scope.questions = getQAC(categories);
-                    // window.glob = $scope.questions;
                 })
 
-        // function getQAC(data) {
-        //     var dataArr = [];
-        //     for (var i = 0; i < 5; i++) {
-        //         dataArr.push(data[1].data.clues[i]);
-        //     }
-        //     console.log(dataArr, "shit");
-        //     return dataArr
-        // }
     });
 
- // .controller('boardController', function($scope, apiQuestsService,$routeParams, AppService){
-
-      // $scope.question = '';
-      // $scope.value = '';
-      // $scope.answer = '';
-      //
-      //
-      // $scope.displayBoardCtrl = function(cats) {
-      //         console.log("Boom!");
-      //         apiQuestsService.displayBoardCtrl(cats)
-      //           .then(function(cats) {
-      //             console.log(cats);
-      //             $scope.cats = apiQuestsService.sixThenShits(data.clues);
-      //
-      //             $scope.questions = $scope.data.clues.question;
-      //             $scope.value = $scope.data.clues.value;
-      //             $scope.answer = $scope.data.clues.answer;
-      //           })
-      //    }
-
-// })
+ 

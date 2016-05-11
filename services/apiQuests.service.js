@@ -1,6 +1,6 @@
 angular
     .module('trebangular')
-    .service('apiQuestsService', function($http, $q) {
+    .service('apiQuestsService', 'CacheEngine',function($http, $q, $cacheFactory) {
 
 
     var cors = 'https://free-cors-server.herokuapp.com/any-request/';
@@ -24,20 +24,11 @@ function getCats(){
     function getQAC() {
       return $http.get(cors + jepUrl)
     }
-    // function getQuestion(id) {
-    //   return $http.get(cors + jepUrl + id)
-    // }
-    // function getCategory(id) {
-    //   return $http.get(cors + jepUrl + category_id)
-    //
-    // function showQuestion(id){
-    //   return $http.get(cors + encodeURIComponent('http://jservice.io/api/category?id=205'));
-    // }
 
     return {
       getQAC: getQAC,
       sixThenShits: sixThenShits,
-      getCats : getCats
-
+      getCats : getCats,
+      $cacheFactory('jeopardyAPI')
 }
     })
