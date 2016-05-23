@@ -2,7 +2,7 @@ angular
     .module('trebangular')
     .directive('boardReader', function() {
         return {
-            templateUrl: './templates/board-reader.html',
+            templateUrl: '../templates/board-reader.html',
             restrict: 'E',
             scope: {
                 question: '=',

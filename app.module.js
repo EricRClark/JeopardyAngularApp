@@ -22,4 +22,3 @@ angular
 require('./controllers/app.controller');
 require('./services/apiQuests.service');
 require('./directive');
-require('./services/app.module')

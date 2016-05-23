@@ -23,7 +23,6 @@ angular
 require('./controllers/app.controller');
 require('./services/apiQuests.service');
 require('./directive');
-// require('./services/app.service')
 
 },{"./controllers/app.controller":2,"./directive":3,"./services/apiQuests.service":9,"angular":7,"angular-route":5}],2:[function(require,module,exports){
 var _ = require('underscore');
@@ -52,41 +51,11 @@ angular
                                 el.data.clues[i].value = 200 * (i + 1);
                             }
                         })
-                    // $scope.questions = getQAC(categories);
-                    // window.glob = $scope.questions;
                 })
 
-        // function getQAC(data) {
-        //     var dataArr = [];
-        //     for (var i = 0; i < 5; i++) {
-        //         dataArr.push(data[1].data.clues[i]);
-        //     }
-        //     console.log(dataArr, "shit");
-        //     return dataArr
-        // }
     });
 
- // .controller('boardController', function($scope, apiQuestsService,$routeParams, AppService){
-
-      // $scope.question = '';
-      // $scope.value = '';
-      // $scope.answer = '';
-      //
-      //
-      // $scope.displayBoardCtrl = function(cats) {
-      //         console.log("Boom!");
-      //         apiQuestsService.displayBoardCtrl(cats)
-      //           .then(function(cats) {
-      //             console.log(cats);
-      //             $scope.cats = apiQuestsService.sixThenShits(data.clues);
-      //
-      //             $scope.questions = $scope.data.clues.question;
-      //             $scope.value = $scope.data.clues.value;
-      //             $scope.answer = $scope.data.clues.answer;
-      //           })
-      //    }
-
-// })
+ 
 
 },{"underscore":8}],3:[function(require,module,exports){
 angular
@@ -94,13 +63,13 @@ angular
     .directive('boardReader', function() {
         return {
             templateUrl: '../templates/board-reader.html',
-            restrict: 'EA',
+            restrict: 'E',
             scope: {
                 question: '=',
-                 addScore: '&'
+
             },
 
-            controller: function($scope, $rootScope, $element) {
+            controller: function($scope, $rootScope) {
                 $scope.addScore = function(input, answer, value) {
                     if (input === answer) {
                         $rootScope.score += value
@@ -109,13 +78,13 @@ angular
                         }
                     };
                     $scope.disableBTN = function(id) {
-                        $('button.' + id).prop('disabled', true),
-                            $('button.' + id).toggle(),
+                        $('button.' + id).prop('disabled', true);
+                            $('button.' + id).toggle();
                             $('#' + id).modal('hide')
 
                     }
                 $scope.ques = function(id){
-                    $("div."+id).toggle();
+                    $("div." + id).toggle();
                 }
             }
         }
@@ -33287,7 +33256,7 @@ module.exports = angular;
 },{}],9:[function(require,module,exports){
 angular
     .module('trebangular')
-    .service('apiQuestsService', function($http, $q) {
+    .service('apiQuestsService', 'CacheEngine',function($http, $q, $cacheFactory) {
 
 
     var cors = 'https://free-cors-server.herokuapp.com/any-request/';
@@ -33295,7 +33264,7 @@ angular
 
 
 //Nate's Help
-function getCats(){
+    function getCats(){
       var defer = $q.defer();
       var getRandom = Math.random() * 1300;
       $http.get(jepUrl + getRandom).then(function(data) {
@@ -33311,22 +33280,12 @@ function getCats(){
     function getQAC() {
       return $http.get(cors + jepUrl)
     }
-    // function getQuestion(id) {
-    //   return $http.get(cors + jepUrl + id)
-    // }
-    // function getCategory(id) {
-    //   return $http.get(cors + jepUrl + category_id)
-    //
-    // function showQuestion(id){
-    //   return $http.get(cors + encodeURIComponent('http://jservice.io/api/category?id=205'));
-    // }
 
     return {
       getQAC: getQAC,
       sixThenShits: sixThenShits,
-      getCats : getCats
-
-}
-    })
+      getCats : getCats,
+    }
+})
 
 },{}]},{},[1]);
