@@ -8,7 +8,7 @@ angular
 
 
 //Nate's Help
-function getCats(){
+    function getCats(){
       var defer = $q.defer();
       var getRandom = Math.random() * 1300;
       $http.get(jepUrl + getRandom).then(function(data) {
@@ -29,6 +29,5 @@ function getCats(){
       getQAC: getQAC,
       sixThenShits: sixThenShits,
       getCats : getCats,
-      $cacheFactory('jeopardyAPI')
-}
-    })
+    }
+})
