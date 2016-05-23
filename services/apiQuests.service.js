@@ -1,6 +1,6 @@
 angular
     .module('trebangular')
-    .service('apiQuestsService', 'CacheEngine',function($http, $q, $cacheFactory) {
+    .service('apiQuestsService',function($http, $q, $cacheFactory) {
 
 
     var cors = 'https://free-cors-server.herokuapp.com/any-request/';

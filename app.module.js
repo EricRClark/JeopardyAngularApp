@@ -7,7 +7,7 @@ angular
 
           $routeProvider
           .when('/',{
-            templateUrl:'templates/index.html',
+            templateUrl:'./templates/index.html',
             controller:"HomeController"
           })
           .when('/404',{
@@ -22,3 +22,4 @@ angular
 require('./controllers/app.controller');
 require('./services/apiQuests.service');
 require('./directive');
+// require('./app.module')

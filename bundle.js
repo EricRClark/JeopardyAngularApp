@@ -8,7 +8,7 @@ angular
 
           $routeProvider
           .when('/',{
-            templateUrl:'templates/index.html',
+            templateUrl:'./templates/index.html',
             controller:"HomeController"
           })
           .when('/404',{
@@ -23,6 +23,7 @@ angular
 require('./controllers/app.controller');
 require('./services/apiQuests.service');
 require('./directive');
+// require('./app.module')
 
 },{"./controllers/app.controller":2,"./directive":3,"./services/apiQuests.service":9,"angular":7,"angular-route":5}],2:[function(require,module,exports){
 var _ = require('underscore');
@@ -33256,7 +33257,7 @@ module.exports = angular;
 },{}],9:[function(require,module,exports){
 angular
     .module('trebangular')
-    .service('apiQuestsService', 'CacheEngine',function($http, $q, $cacheFactory) {
+    .service('apiQuestsService',function($http, $q, $cacheFactory) {
 
 
     var cors = 'https://free-cors-server.herokuapp.com/any-request/';
